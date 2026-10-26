@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ICT324 research on road accident severity in Thailand.">
+  <title>Road Accident Severity in Thailand | ICT324</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="project-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="container navigation" aria-label="Main navigation">
+      <a class="brand" href="#home">ICT<span>324</span><small>ROAD SAFETY RESEARCH</small></a>
+      <button class="menu-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#data">Data</a>
+        <a href="#method">Method</a>
+        <a href="#progress">Progress</a>
+        <a href="#results">Results</a>
+        <a href="#files">Files &amp; references</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container">
+        <p class="eyebrow">ICT324 · CLASSIFICATION RESEARCH</p>
+        <h1>Predicting road accident <em>severity</em> in Thailand</h1>
+        <p class="hero-lead">A study of fatal crash detection on Thailand's Ministry of Transport road network.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#data">Explore the project ↓</a>
+          <a class="button button-outline" href="#files">Project files ↗</a>
+        </div>
+        <div class="hero-meta">
+          <div><span>TEAM</span><strong>Aung Ko Ko Minn · Htoo Myat Htin Lynn · Thant Mg Mg Lwin</strong></div>
+          <div><span>TRACK</span><strong>Classification with hotspot exploration</strong></div>
+          <div><span>LAST UPDATED</span><strong id="last-updated"></strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem">
+      <div class="container">
+        <p class="eyebrow">01 / THE PROBLEM</p>
+        <h2>Detect the crashes that matter most.</h2>
+        <p class="section-lead">Fatal crashes may be a minority of incidents. Overall accuracy alone can hide missed fatal cases, so the main evaluation will report fatal-class recall together with precision.</p>
+        <div class="card-grid three">
+          <article class="card"><span class="card-number">01</span><h3>Research question</h3><p>Which model and imbalance strategy improves fatal-crash detection while keeping false alarms useful?</p></article>
+          <article class="card"><span class="card-number">02</span><h3>Factors</h3><p>Examine the time, location, road, vehicle, and cause fields that are actually present in the data.</p></article>
+          <article class="card"><span class="card-number">03</span><h3>Generalisation</h3><p>Train on earlier years and evaluate on later years to measure how performance changes over time.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alternate" id="data">
+      <div class="container">
+        <div class="section-top"><div><p class="eyebrow">02 / DATA</p><h2>TRAMS dataset profile</h2></div><span class="status" id="data-status"></span></div>
+        <p class="section-lead">The selected source is the Ministry of Transport TRAMS incident dataset. The audited research files will be added when supplied by the team.</p>
+        <div class="card-grid two">
+          <article class="card dark-card">
+            <h3>Source</h3>
+            <p>Road accidents on national highways, rural highways, and expressways.</p>
+            <a href="https://data.go.th/en/dataset/gdpublish-roadaccident" target="_blank" rel="noopener noreferrer">Open official listing ↗</a>
+          </article>
+          <article class="card">
+            <h3>Verified data audit</h3>
+            <dl class="fact-list" id="data-facts"></dl>
+            <p class="small-note" id="data-note"></p>
+          </article>
+        </div>
+        <div class="card table-card">
+          <h3>Yearly file audit</h3>
+          <div class="table-scroll"><table><thead><tr><th>Year</th><th>Records</th><th>Date range</th><th>Source file</th></tr></thead><tbody id="year-rows"></tbody></table></div>
+        </div>
+        <div class="card table-card">
+          <h3>Data dictionary</h3>
+          <div class="table-scroll"><table><thead><tr><th>Original column</th><th>English name</th><th>Use and cleaning note</th></tr></thead><tbody id="column-rows"></tbody></table></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container">
+        <p class="eyebrow">03 / METHOD</p>
+        <h2>Reproducible analysis workflow</h2>
+        <p class="section-lead">This is the analysis specification. Completed steps and changes will be recorded in the progress log.</p>
+        <div class="card-grid four">
+          <article class="card"><span class="card-number">01</span><h3>Prepare</h3><p>Merge yearly files, harmonise names and categories, document missing values, and define a fatal versus non-fatal target.</p></article>
+          <article class="card"><span class="card-number">02</span><h3>Compare</h3><p>Use a majority-class baseline, logistic regression, decision tree, and random forest. Compare class weights and tuned thresholds where supported.</p></article>
+          <article class="card"><span class="card-number">03</span><h3>Validate</h3><p>Keep later years as a temporal holdout. Use cross-validation only within training years and report the exact split.</p></article>
+          <article class="card"><span class="card-number">04</span><h3>Interpret</h3><p>Report fatal-class recall, precision, F1, PR-AUC, macro-F1, confusion matrices, and meaningful error patterns.</p></article>
+        </div>
+        <p class="callout">Potential hotspots can be explored after location coverage and data quality are checked. Any clustering method and evaluation will be documented with the results.</p>
+      </div>
+    </section>
+
+    <section class="section alternate" id="progress">
+      <div class="container">
+        <p class="eyebrow">04 / PROGRESS LOG</p>
+        <h2>Dated work and decisions</h2>
+        <div class="timeline" id="progress-entries"></div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-top"><div><p class="eyebrow">05 / RESULTS</p><h2>Measured findings</h2></div><span class="status" id="results-status"></span></div>
+        <p class="section-lead" id="results-summary"></p>
+        <div class="card table-card">
+          <h3>Model comparison</h3>
+          <div class="table-scroll"><table><thead><tr><th>Model</th><th>Test period</th><th>Fatal recall</th><th>Fatal precision</th><th>Fatal F1</th><th>PR-AUC</th><th>Macro F1</th></tr></thead><tbody id="model-rows"></tbody></table></div>
+          <p class="small-note">Report cross-validation mean ± standard deviation separately from temporal holdout scores.</p>
+        </div>
+        <div class="card-grid two" id="result-figures"></div>
+        <div class="card interpretation"><h3>Interpretation and limitations</h3><p id="results-interpretation"></p></div>
+      </div>
+    </section>
+
+    <section class="section alternate" id="files">
+      <div class="container">
+        <p class="eyebrow">06 / FILES &amp; REFERENCES</p>
+        <h2>Project materials</h2>
+        <p class="section-lead">Links become active when files are added. The source dataset remains linked to its publisher unless a redistributable copy is supplied.</p>
+        <div class="card-grid two">
+          <div class="card"><h3>Downloads and links</h3><div id="file-list"></div></div>
+          <div class="card"><h3>References</h3><ol class="references" id="reference-list"></ol><p class="small-note">Add verified bibliographic details and at least 10 recent related works before the final paper.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><strong>ICT324 · Road Safety Research</strong><p>Rangsit University International College</p><a href="#home">Back to top ↑</a></div></footer>
+</body>
+</html>
