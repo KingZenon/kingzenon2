@@ -15,7 +15,7 @@ The page is ready for the team's real research files. Unknown counts and scores 
 | Analysis code and reproduction guide | `analysis/` | Set the **Analysis code and reproduction guide** path in `files`; link to a README or archive. |
 | Public dataset or access instructions | Publisher URL or an approved public file | Set the **Verified dataset or data access instructions** path in `files`. |
 
-The three existing PDFs in `assets/` are linked already. Add files first, then update their paths in `project-data.js`. Paths are relative to `index.html`.
+The kickoff slides and course brief are linked already. The original proposal PDF contains student ID numbers, so it is excluded from the public site until a public copy is prepared. Add files first, then update their paths in `project-data.js`. Paths are relative to `index.html`.
 
 ## Update the research content
 

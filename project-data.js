@@ -52,7 +52,7 @@ window.PROJECT_DATA = {
   },
 
   files: [
-    { label: "Project proposal", path: "assets/Proposal_B_Road_Accident_Severity.pdf", type: "PDF" },
+    { label: "Project proposal (public copy)", path: null, type: "PDF" },
     { label: "Kickoff slides", path: "assets/Predicting Road Accident Severity.pdf", type: "PDF" },
     { label: "ICT324 course brief", path: "assets/ICT324-ProjectInfo.pdf", type: "PDF" },
     { label: "Dataset source", path: "https://data.go.th/en/dataset/gdpublish-roadaccident", type: "LINK" },
