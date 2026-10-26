@@ -30,6 +30,13 @@ window.PROJECT_DATA = {
   progress: [
     {
       date: "26 October 2026",
+      title: "Public website published",
+      done: "Published the project website through GitHub Pages at https://kingzenon.github.io/kingzenon2/ and checked that the page opens publicly.",
+      issue: "The research dataset, model results, and final deliverables are still awaiting team files.",
+      next: "Add the real data audit and measured findings when the team supplies the dataset."
+    },
+    {
+      date: "26 October 2026",
       title: "Website structure prepared",
       done: "Created the project page and update slots for the data audit, model results, figures, files, and references.",
       issue: "The research dataset has not been supplied to this workspace.",

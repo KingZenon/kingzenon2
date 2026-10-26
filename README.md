@@ -1,5 +1,8 @@
 # ICT324 road accident severity website
 
+Public site: https://kingzenon.github.io/kingzenon2/  
+Repository: https://github.com/KingZenon/kingzenon2
+
 This is a static project website. Open `index.html` directly, or run `python -m http.server 8000` in this folder and visit `http://localhost:8000/`. No build step or online CSS library is required.
 
 The page is ready for the team's real research files. Unknown counts and scores remain visibly pending. **Do not enter estimated values.**
@@ -34,7 +37,7 @@ All changeable project content lives in `project-data.js`:
 - Run `node check-site.js` to check page targets and configured local file paths.
 - Preview on desktop and phone sizes.
 - Open the public URL in a signed-out browser to confirm it works without login.
-- Submit the public URL on Google Classroom when ready. Hosting and submission require the team's chosen account and are not configured in this folder.
+- Submit the public URL on Google Classroom when ready. GitHub Pages is configured from the `main` branch at the repository root; Classroom submission remains a team action.
 
 The website code is split by purpose: `index.html` contains page structure, `styles.css` contains layout and responsive rules, `project-data.js` contains research content, and `script.js` renders the content and controls the mobile menu.
 
