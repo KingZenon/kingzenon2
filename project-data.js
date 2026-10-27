@@ -4,13 +4,13 @@
  * See README.md for the exact update steps and file locations.
  */
 window.PROJECT_DATA = {
-  lastUpdated: "26 October 2026",
+  lastUpdated: "27 October 2026",
 
-  // Edit names and GitHub URLs here. Keep github as null until a profile is confirmed.
+  // Edit team names, email addresses, and GitHub profiles here.
   team: [
-    { name: "Aung Ko Ko Minn", github: null },
-    { name: "Htoo Myat Htin Lynn", github: null },
-    { name: "Thant Mg Mg Lwin", github: null }
+    { name: "Aung Ko Ko Minn", email: "maungkokominn@gmail.com", github: "https://github.com/akkminn" },
+    { name: "Htoo Myat Htin Lynn", email: "htoomyathtinlynn2001@gmail.com", github: "https://github.com/KingZenon" },
+    { name: "Thant Mg Mg Lwin", email: "hehedd51@gmail.com", github: "https://github.com/iYoon-Maiden" }
   ],
 
   data: {
@@ -38,7 +38,7 @@ window.PROJECT_DATA = {
     {
       date: "26 October 2026",
       title: "Public website published",
-      done: "Published the project website through GitHub Pages at https://kingzenon.github.io/kingzenon2/ and checked that the page opens publicly.",
+      done: "Published the project website through GitHub Pages at https://kingzenon.github.io/research/ and checked that the page opens publicly.",
       issue: "The research dataset, model results, and final deliverables are still awaiting team files.",
       next: "Add the real data audit and measured findings when the team supplies the dataset."
     },

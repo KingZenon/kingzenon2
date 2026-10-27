@@ -167,16 +167,24 @@ function renderTeam() {
     const card = document.createElement("article");
     card.className = "card team-card";
     addText(card, "h3", member.name);
+    const contacts = document.createElement("div");
+    contacts.className = "team-contacts";
+    if (member.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(member.email)) {
+      const email = addText(contacts, "a", member.email);
+      email.href = `mailto:${member.email}`;
+      email.setAttribute("aria-label", `Email ${member.name}`);
+    }
     if (member.github && /^https:\/\/github\.com\/[A-Za-z0-9-]+\/?$/.test(member.github)) {
-      const link = addText(card, "a", "GitHub profile ");
+      const link = addText(contacts, "a", "GitHub profile ");
       addArrowIcon(link);
       link.href = member.github;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       link.setAttribute("aria-label", `${member.name} on GitHub`);
     } else {
-      addText(card, "p", "Demo profile · add GitHub link later", "team-pending");
+      addText(contacts, "p", "GitHub profile to be added", "team-pending");
     }
+    card.appendChild(contacts);
     byId("team-members").appendChild(card);
   });
 }
