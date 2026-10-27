@@ -61,6 +61,7 @@ h3 { font-size: 1.18rem; }
 .button-primary:hover { color: #06333c; background: #98eee7; }
 .button-outline { color: var(--white); border: 1px solid #8eb6c6; }
 .button-outline:hover { color: var(--white); border-color: var(--white); }
+.icon-arrow { display: inline-block; width: 1em; height: 1em; margin-left: .25em; vertical-align: -.12em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .hero-meta { display: grid; grid-template-columns: 2fr 1.4fr 1fr; gap: 28px; margin-top: 80px; padding-top: 24px; border-top: 1px solid #42677b; }
 .hero-meta span { display: block; margin-bottom: 6px; color: #8ab2c1; font-size: .65rem; font-weight: 800; letter-spacing: .13em; }
 .hero-meta strong { font-size: .82rem; }

@@ -9,6 +9,18 @@ function addText(parent, tagName, value, className = "") {
   return element;
 }
 
+function addArrowIcon(parent) {
+  const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  icon.setAttribute("class", "icon-arrow");
+  icon.setAttribute("viewBox", "0 0 16 16");
+  icon.setAttribute("aria-hidden", "true");
+  icon.setAttribute("focusable", "false");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", "M5 11 11 5M5 5h6v6");
+  icon.appendChild(path);
+  parent.appendChild(icon);
+}
+
 function showValue(value) {
   return value === null || value === undefined || value === "" ? "Awaiting data" : String(value);
 }
@@ -128,7 +140,8 @@ function renderFiles() {
     }
     addText(row, "span", item.type, "file-type");
     addText(row, "span", item.label);
-    addText(row, "span", item.path ? "↗" : "Awaiting file", "file-state");
+    const state = addText(row, "span", item.path ? "" : "Awaiting file", "file-state");
+    if (item.path) addArrowIcon(state);
     byId("file-list").appendChild(row);
   });
 
@@ -155,7 +168,8 @@ function renderTeam() {
     card.className = "card team-card";
     addText(card, "h3", member.name);
     if (member.github && /^https:\/\/github\.com\/[A-Za-z0-9-]+\/?$/.test(member.github)) {
-      const link = addText(card, "a", "GitHub profile ↗");
+      const link = addText(card, "a", "GitHub profile ");
+      addArrowIcon(link);
       link.href = member.github;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
