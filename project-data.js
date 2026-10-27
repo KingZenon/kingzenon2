@@ -6,6 +6,13 @@
 window.PROJECT_DATA = {
   lastUpdated: "26 October 2026",
 
+  // Edit names and GitHub URLs here. Keep github as null until a profile is confirmed.
+  team: [
+    { name: "Aung Ko Ko Minn", github: null },
+    { name: "Htoo Myat Htin Lynn", github: null },
+    { name: "Thant Mg Mg Lwin", github: null }
+  ],
+
   data: {
     status: "Awaiting team dataset",
     totalRecords: null,

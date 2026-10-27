@@ -148,6 +148,25 @@ function renderFiles() {
   });
 }
 
+function renderTeam() {
+  byId("team-names").textContent = project.team.map(member => member.name).join(" · ");
+  project.team.forEach(member => {
+    const card = document.createElement("article");
+    card.className = "card team-card";
+    addText(card, "h3", member.name);
+    if (member.github && /^https:\/\/github\.com\/[A-Za-z0-9-]+\/?$/.test(member.github)) {
+      const link = addText(card, "a", "GitHub profile ↗");
+      link.href = member.github;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", `${member.name} on GitHub`);
+    } else {
+      addText(card, "p", "Demo profile · add GitHub link later", "team-pending");
+    }
+    byId("team-members").appendChild(card);
+  });
+}
+
 function setupNavigation() {
   const button = document.querySelector(".menu-toggle");
   const links = byId("nav-links");
@@ -173,4 +192,5 @@ renderData();
 renderProgress();
 renderResults();
 renderFiles();
+renderTeam();
 setupNavigation();

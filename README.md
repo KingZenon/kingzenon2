@@ -1,7 +1,7 @@
 # ICT324 road accident severity website
 
 Public site: https://kingzenon.github.io/kingzenon2/  
-Repository: https://github.com/KingZenon/kingzenon2
+Repository: https://github.com/KingZenon/Research
 
 This is a static project website. Open `index.html` directly, or run `python -m http.server 8000` in this folder and visit `http://localhost:8000/`. No build step or online CSS library is required.
 
@@ -23,6 +23,8 @@ The kickoff slides and course brief are linked already. The original proposal PD
 ## Update the research content
 
 All changeable project content lives in `project-data.js`:
+
+To update the team section, edit the `team` list near the top of `project-data.js`. Change a member's `name` or set `github` to their full profile URL (for example, `https://github.com/username`). Use `null` until a profile is confirmed. The hero names and team cards update from the same list.
 
 1. Set `data.totalRecords`, `dateRange`, `targetDefinition`, `cleaningSummary`, and each audited year. Add the real Thai column names, English labels, and cleaning notes to `data.columns`.
 2. Add a dated `progress` entry describing work completed, issues, and next action. Set `lastUpdated` to the newest actual update date.

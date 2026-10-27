@@ -30,7 +30,8 @@ const requiredIds = [
   "last-updated", "data-status", "data-facts", "data-note",
   "year-rows", "column-rows", "progress-entries", "results-status",
   "results-summary", "model-rows", "result-figures",
-  "results-interpretation", "file-list", "reference-list"
+  "results-interpretation", "file-list", "reference-list",
+  "team-names", "team-members"
 ];
 for (const id of requiredIds) {
   if (!html.includes(`id="${id}"`)) problems.push(`Missing page target: ${id}`);
