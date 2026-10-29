@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ICT324 research on road accident severity in Thailand.">
   <title>Road Accident Severity in Thailand | ICT324</title>
-  <link rel="stylesheet" href="styles.css?v=contacts-20261027">
-  <script src="project-data.js?v=contacts-20261027" defer></script>
-  <script src="script.js?v=contacts-20261027" defer></script>
+  <link rel="stylesheet" href="styles.css?v=update-20261029">
+  <script src="project-data.js?v=update-20261029" defer></script>
+  <script src="script.js?v=update-20261029" defer></script>
 </head>
 <body>
+  <noscript><div class="container" style="padding:16px">This page needs JavaScript to show the data tables, progress log, results and file links. The content is stored in project-data.js in the repository.</div></noscript>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="container navigation" aria-label="Main navigation">
@@ -32,15 +33,15 @@
       <div class="container">
         <p class="eyebrow">ICT324 · CLASSIFICATION RESEARCH</p>
         <h1>Predicting road accident <em>severity</em> in Thailand</h1>
-        <p class="hero-lead">A study of fatal crash detection on Thailand's Ministry of Transport road network.</p>
+        <p class="hero-lead">A study of crash severity (fatal, injury, property damage only) on Thailand's Ministry of Transport road network.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#data">Explore the project <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 3v10m-4-4 4 4 4-4"/></svg></a>
           <a class="button button-outline" href="#files">Project files <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 11 11 5M5 5h6v6"/></svg></a>
         </div>
         <div class="hero-meta">
-          <div><span>TEAM</span><strong id="team-names"></strong></div>
-          <div><span>TRACK</span><strong>Classification with hotspot exploration</strong></div>
-          <div><span>LAST UPDATED</span><strong id="last-updated"></strong></div>
+          <div><span>TEAM</span><strong id="team-names">Aung Ko Ko Minn · Htoo Myat Htin Lynn · Thant Mg Mg Lwin</strong></div>
+          <div><span>TRACK</span><strong>Three-class classification with cross-country validation</strong></div>
+          <div><span>LAST UPDATED</span><strong id="last-updated">29 October 2026</strong></div>
         </div>
       </div>
     </section>
@@ -49,19 +50,20 @@
       <div class="container">
         <p class="eyebrow">01 / THE PROBLEM</p>
         <h2>Detect the crashes that matter most.</h2>
-        <p class="section-lead">Fatal crashes may be a minority of incidents. Overall accuracy alone can hide missed fatal cases, so the main evaluation will report fatal-class recall together with precision.</p>
+        <p class="section-lead">Fatal crashes are about 11% of incidents in the audited data (19,437 of 170,022). Overall accuracy alone can hide missed fatal cases, so the evaluation reports fatal-class recall together with precision, macro-F1 and balanced accuracy.</p>
         <div class="card-grid three">
-          <article class="card"><span class="card-number">01</span><h3>Research question</h3><p>Which model and imbalance strategy improves fatal-crash detection while keeping false alarms useful?</p></article>
-          <article class="card"><span class="card-number">02</span><h3>Factors</h3><p>Examine the time, location, road, vehicle, and cause fields that are actually present in the data.</p></article>
-          <article class="card"><span class="card-number">03</span><h3>Generalisation</h3><p>Train on earlier years and evaluate on later years to measure how performance changes over time.</p></article>
+          <article class="card"><span class="card-number">01</span><h3>Research question</h3><p>Which model and imbalance strategy improves fatal-crash detection across three severity classes (fatal, injury, property damage only) while keeping false alarms useful?</p></article>
+          <article class="card"><span class="card-number">02</span><h3>Factors</h3><p>Examine the time, location, road, vehicle, and cause fields in the audited files. Casualty counts define the target, so they are kept out of the features.</p></article>
+          <article class="card"><span class="card-number">03</span><h3>Generalisation</h3><p>Train on 2019–2024, validate on 2025 and test once on 2026 to measure change over time. A comparison with another country's data is planned.</p></article>
         </div>
+        <div class="card interpretation"><h3>Related work</h3><p>Mohamad et al. (2025), read in full, compared eight classifiers on 112,837 Thai motorcycle accidents (2015–2020) and found random forest best (accuracy 0.777) but fatal recall only 0.198. Champahom et al. (2024) report XGBoost as the strongest tree-based model on Thai highways, and Uttra et al. (2026) report XGBoost best (validation accuracy 83.8%) for three-class holiday-period crashes in Thailand. Phojaem et al. (2026) compare injury-severity models for highway-speed motorways. Gradient-boosted trees therefore look like the strongest candidates, and weak fatal-crash recall is the common problem. This project adds a multi-year, three-class benchmark on the Ministry of Transport network with temporal validation. Details beyond the first paper come from abstracts and are still being checked against the full texts. See the reference list below.</p></div>
       </div>
     </section>
 
     <section class="section alternate" id="data">
       <div class="container">
         <div class="section-top"><div><p class="eyebrow">02 / DATA</p><h2>TRAMS dataset profile</h2></div><span class="status" id="data-status"></span></div>
-        <p class="section-lead">The selected source is the Ministry of Transport TRAMS incident dataset. The audited research files will be added when supplied by the team.</p>
+        <p class="section-lead">The source is the Ministry of Transport TRAMS incident dataset. The audit below covers all eight yearly files, and the dataset is locked as of 29 October 2026: file sizes and SHA-256 hashes are in the lock manifest. Full access notes and download links are in the data guide.</p>
         <div class="card-grid two">
           <article class="card dark-card">
             <h3>Source</h3>
@@ -89,12 +91,12 @@
       <div class="container">
         <p class="eyebrow">03 / METHOD</p>
         <h2>Reproducible analysis workflow</h2>
-        <p class="section-lead">This is the analysis specification. Completed steps and changes will be recorded in the progress log.</p>
+        <p class="section-lead">This is the analysis plan. Completed steps and changes are recorded in the progress log.</p>
         <div class="card-grid four">
-          <article class="card"><span class="card-number">01</span><h3>Prepare</h3><p>Merge yearly files, harmonise names and categories, document missing values, and define a fatal versus non-fatal target.</p></article>
-          <article class="card"><span class="card-number">02</span><h3>Compare</h3><p>Use a majority-class baseline, logistic regression, decision tree, and random forest. Compare class weights and tuned thresholds where supported.</p></article>
-          <article class="card"><span class="card-number">03</span><h3>Validate</h3><p>Keep later years as a temporal holdout. Use cross-validation only within training years and report the exact split.</p></article>
-          <article class="card"><span class="card-number">04</span><h3>Interpret</h3><p>Report fatal-class recall, precision, F1, PR-AUC, macro-F1, confusion matrices, and meaningful error patterns.</p></article>
+          <article class="card"><span class="card-number">01</span><h3>Prepare</h3><p>Merge yearly files, harmonise names, dates and categories, document missing values, and derive a three-class severity target (fatal, injury, property damage only).</p></article>
+          <article class="card"><span class="card-number">02</span><h3>Compare</h3><p>Start from a majority-class baseline, logistic regression, decision tree, random forest, XGBoost and LightGBM. Then compare class weights, SMOTE and tuned thresholds.</p></article>
+          <article class="card"><span class="card-number">03</span><h3>Validate</h3><p>Validate on 2025 and keep 2026 as a held-out test used once at the end. Use cross-validation only within training years and report the exact split.</p></article>
+          <article class="card"><span class="card-number">04</span><h3>Interpret</h3><p>Report fatal-class recall, precision, F1, PR-AUC, macro-F1, balanced accuracy, confusion matrices, and meaningful error patterns.</p></article>
         </div>
         <p class="callout">Potential hotspots can be explored after location coverage and data quality are checked. Any clustering method and evaluation will be documented with the results.</p>
       </div>
@@ -126,10 +128,10 @@
       <div class="container">
         <p class="eyebrow">06 / FILES &amp; REFERENCES</p>
         <h2>Project materials</h2>
-        <p class="section-lead">Links become active when files are added. The source dataset remains linked to its publisher unless a redistributable copy is supplied.</p>
+        <p class="section-lead">Links become active when files are added. The source dataset stays linked to its publisher; the raw files are not copied into this repository.</p>
         <div class="card-grid two">
           <div class="card"><h3>Downloads and links</h3><div id="file-list"></div></div>
-          <div class="card"><h3>References</h3><ol class="references" id="reference-list"></ol><p class="small-note">Add verified bibliographic details and at least 10 recent related works before the final paper.</p></div>
+          <div class="card"><h3>References</h3><ol class="references" id="reference-list"></ol><p class="small-note">More verified references will be added; the final paper needs at least 10 recent related works.</p></div>
         </div>
       </div>
     </section>
