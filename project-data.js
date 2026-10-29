@@ -33,49 +33,57 @@ window.PROJECT_DATA = {
       "year": 2019,
       "records": "19,194",
       "dateRange": "2019-01-01 to 2019-12-31",
-      "file": "accident2019.csv"
+      "file": "accident2019.csv",
+      "fileUrl": "https://datagov.mot.go.th/dataset/7e077ffd-dc4f-4dc6-a71c-0813726f3c12/resource/4d919e5b-aa06-4fe4-8a13-5571747a1254/download/accident2019.csv"
     },
     {
       "year": 2020,
       "records": "21,238",
       "dateRange": "2020-01-01 to 2020-12-31",
-      "file": "accident2020.csv"
+      "file": "accident2020.csv",
+      "fileUrl": "https://datagov.mot.go.th/dataset/7e077ffd-dc4f-4dc6-a71c-0813726f3c12/resource/40476c7b-4194-4dc2-aba5-7326819ed071/download/accident2020.csv"
     },
     {
       "year": 2021,
       "records": "20,062",
       "dateRange": "2021-01-01 to 2021-12-31",
-      "file": "accident2021.csv"
+      "file": "accident2021.csv",
+      "fileUrl": "https://datagov.mot.go.th/dataset/7e077ffd-dc4f-4dc6-a71c-0813726f3c12/resource/d0a8601a-3ee5-4ce8-8e9d-3dae3915dc30/download/accident2021.csv"
     },
     {
       "year": 2022,
       "records": "20,566",
       "dateRange": "2022-01-01 to 2022-12-31",
-      "file": "accident2022.csv"
+      "file": "accident2022.csv",
+      "fileUrl": "https://datagov.mot.go.th/dataset/7e077ffd-dc4f-4dc6-a71c-0813726f3c12/resource/733b7874-bd5f-44b9-b271-650890b061f2/download/accident2022.csv"
     },
     {
       "year": 2023,
       "records": "23,841",
       "dateRange": "2023-01-01 to 2023-12-31",
-      "file": "accident2023.csv"
+      "file": "accident2023.csv",
+      "fileUrl": "https://datagov.mot.go.th/dataset/7e077ffd-dc4f-4dc6-a71c-0813726f3c12/resource/661f2ead-1f28-4cd9-8a67-1bef76b33ef6/download/accident2023.csv"
     },
     {
       "year": 2024,
       "records": "23,952",
       "dateRange": "2024-01-01 to 2024-12-31",
-      "file": "accident2024.csv"
+      "file": "accident2024.csv",
+      "fileUrl": "https://datagov.mot.go.th/dataset/7e077ffd-dc4f-4dc6-a71c-0813726f3c12/resource/83e9fae0-5f33-45e7-9a6d-6d5ad2060a08/download/accident2024.csv"
     },
     {
       "year": 2025,
       "records": "23,715",
       "dateRange": "2025-01-01 to 2025-12-31",
-      "file": "accident2025.csv"
+      "file": "accident2025.csv",
+      "fileUrl": "https://datagov.mot.go.th/dataset/7e077ffd-dc4f-4dc6-a71c-0813726f3c12/resource/e1db5e93-2b70-4ee4-b6d7-7ead76d14a09/download/accident2025.csv"
     },
     {
       "year": 2026,
       "records": "17,454",
       "dateRange": "2026-01-01 to 2026-10-12 (partial year)",
-      "file": "accident2026.csv"
+      "file": "accident2026.csv",
+      "fileUrl": "https://datagov.mot.go.th/dataset/7e077ffd-dc4f-4dc6-a71c-0813726f3c12/resource/4625b7aa-99a4-4dfb-9a0f-6402814d0f2c/download/accident2026.csv"
     }
   ],
   "columns": [

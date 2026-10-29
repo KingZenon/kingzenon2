@@ -47,7 +47,15 @@ function renderData() {
 
   data.years.forEach(item => {
     const row = document.createElement("tr");
-    addCells(row, [item.year, item.records, item.dateRange, item.file]);
+    addCells(row, [item.year, item.records, item.dateRange, item.fileUrl ? "" : item.file]);
+    if (item.fileUrl && /^https:\/\//.test(item.fileUrl)) {
+      const cell = row.lastElementChild;
+      const link = addText(cell, "a", item.file);
+      link.href = item.fileUrl;
+      link.rel = "noopener noreferrer";
+      link.setAttribute("download", item.file);
+      link.setAttribute("aria-label", `Download ${item.file} from the publisher`);
+    }
     byId("year-rows").appendChild(row);
   });
 
