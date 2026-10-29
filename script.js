@@ -50,6 +50,7 @@ function renderData() {
     addCells(row, [item.year, item.records, item.dateRange, item.fileUrl ? "" : item.file]);
     if (item.fileUrl && /^https:\/\//.test(item.fileUrl)) {
       const cell = row.lastElementChild;
+      cell.textContent = "";
       const link = addText(cell, "a", item.file);
       link.href = item.fileUrl;
       link.rel = "noopener noreferrer";
